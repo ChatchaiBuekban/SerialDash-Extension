@@ -5,6 +5,8 @@ A modern, real-time serial-data dashboard for Visual Studio Code. Build live vis
 ![Version](https://img.shields.io/badge/version-0.0.1-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-%5E1.75.0-007ACC)
 
+![Serial Dash screenshot](assets/screenshot/screenshot.png)
+
 ## Features
 
 - **Live serial monitor** with port + baud selection directly in the dashboard header
@@ -18,17 +20,6 @@ A modern, real-time serial-data dashboard for Visual Studio Code. Build live vis
 - **Modern UI** using VS Code theme variables, with subtle shadows, gradients, and smooth animations
 
 ## Getting Started
-
-### Install
-
-From source:
-```bash
-git clone <repo-url>
-cd SerialDash-Extension
-npm install
-npm run compile
-```
-Press `F5` in VS Code to launch the Extension Development Host.
 
 ### Usage
 
@@ -49,6 +40,21 @@ Each value is mapped to a channel index (`0`, `1`, `2`, …). Widgets subscribe 
 Change the delimiter with **Serial Dash: Set Delimiter** (defaults to `,`).
 
 Non-numeric characters are stripped, so prefixes like `T23.5` or `H67%` are also supported.
+
+### Examples
+
+Ready-to-flash sketches live in [`examples/`](./examples):
+
+| Example | Description |
+|---|---|
+| [`dummy_serial`](./examples/dummy_serial/dummy_serial.ino) | Streams 6 simulated channels (temperature, RPM, battery, pressure, humidity, switch) at 20 Hz, 115200 baud — perfect for trying every widget type without real hardware. Tested on Arduino Uno / Nano / **UNO R4 Minima** / ESP32 / RP2040. |
+
+Compile and upload with [arduino-cli](https://arduino.github.io/arduino-cli/):
+```bash
+# UNO R4 Minima
+arduino-cli compile --fqbn arduino:renesas_uno:minima examples/dummy_serial
+arduino-cli upload  --fqbn arduino:renesas_uno:minima -p <PORT> examples/dummy_serial
+```
 
 ## Widget Types
 

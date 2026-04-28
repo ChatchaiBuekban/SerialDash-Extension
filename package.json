@@ -3,7 +3,7 @@
   "displayName": "Serial Dash",
   "description": "Real-time Serial Dashboard with Line and Gauge charts and more.",
   "version": "0.0.1",
-  "publisher": "serialdash",
+  "publisher": "chatchaibuekban",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -11,6 +11,15 @@
     "Other"
   ],
   "icon": "assets/icons/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChatchaiBuekban/SerialDash-Extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChatchaiBuekban/SerialDash-Extension/issues"
+  },
+  "homepage": "https://github.com/ChatchaiBuekban/SerialDash-Extension#readme",
+  "license": "MIT",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {

@@ -2,11 +2,17 @@
 .vscode-test/**
 out/**
 src/**
+.claude/**
 .eslintignore
 .eslintrc.json
 tsconfig.json
 package-lock.json
 vsc-extension-quickstart.md
+**/.DS_Store
+**/Thumbs.db
+*.vsix
+assets/README.md
+assets/images/**
 !out/extension.js
 !out/SerialManager.js
 !out/DashboardPanel.js

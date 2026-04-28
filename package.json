@@ -1,0 +1,44 @@
+{
+  "name": "serialdash-extension",
+  "displayName": "Serial Dash",
+  "description": "Real-time Serial Dashboard with Line and Gauge charts and more.",
+  "version": "0.0.1",
+  "publisher": "serialdash",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "assets/icons/icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "serialdash.openDashboard",
+        "title": "Serial Dash: Open Dashboard"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3",
+    "@types/serialport": "^8.0.2"
+  },
+  "dependencies": {
+    "serialport": "^10.5.0"
+  }
+}

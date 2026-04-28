@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+out/**
+src/**
+.gitignore
+.eslintignore
+.eslintrc.json
+tsconfig.json
+package-lock.json
+vsc-extension-quickstart.md
+!out/extension.js
+!out/SerialManager.js
+!out/DashboardPanel.js
+!media/**

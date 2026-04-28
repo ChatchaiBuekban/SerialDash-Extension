@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+dist/
+*.vsix
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode-test/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Arduino build artifacts
+examples/**/build/
+*.hex
+*.bin
+*.elf
+*.map
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+
+# Temp
+*.tmp
+*.bak

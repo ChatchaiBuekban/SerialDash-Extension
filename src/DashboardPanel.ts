@@ -228,7 +228,7 @@ export class DashboardPanel {
                             <div class="brand-icon">${iconSerial}</div>
                             <div class="brand-text">
                                 <h1>Serial Dash</h1>
-                                <span class="brand-sub">Real-time Serial Dash Board Monitor</span>
+                                <span class="brand-sub">Real-time Serial Dashboard Monitor</span>
                             </div>
                         </div>
                         <div class="header-right">

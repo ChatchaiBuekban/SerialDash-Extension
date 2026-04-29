@@ -830,8 +830,18 @@
             const range = max - min;
             const ticks = Math.max(2, gaugeMajorTicks);
             const tickStep = range / (ticks - 1);
-            const majorTicks = Array.from({length: ticks}, (_, i) => String(min + tickStep * i));
+            const fmtTick = (v) => {
+                const s = (Math.round(v * 10) / 10).toString();
+                return s.includes('.') ? s.replace(/0+$/, '').replace(/\.$/, '') : s;
+            };
+            const majorTicks = Array.from({length: ticks}, (_, i) => fmtTick(min + tickStep * i));
             const highlightStart = min + range * (gaugeHighlight / 100);
+            const css = getComputedStyle(document.documentElement);
+            const cssVar = (name, fallback) => css.getPropertyValue(name).trim() || fallback;
+            const fg = cssVar('--vscode-foreground', '#e5e7eb');
+            const muted = cssVar('--vscode-descriptionForeground', '#9ca3af');
+            const plate = cssVar('--sd-surface', '#1e1e1e');
+            const plateHi = cssVar('--sd-surface-hi', '#2a2a2a');
             widgetObj.gauge = new RadialGauge({
                 renderTo: canvas, width: 200, height: 200,
                 units: gaugeShowUnits ? (units || title) : '',
@@ -840,10 +850,24 @@
                 highlights: gaugeHighlight < 100
                     ? [{ from: highlightStart, to: max, color: hexToRgba('#ef4444', 0.75) }]
                     : [],
-                colorPlate: "#fff", borderShadowWidth: 0, borders: !!gaugeShowBorders,
-                needleType: gaugeNeedleType, needleWidth: 2,
+                colorPlate: plate, colorPlateEnd: plate,
+                colorMajorTicks: fg, colorMinorTicks: muted,
+                colorNumbers: fg, colorTitle: fg, colorUnits: muted,
+                borderShadowWidth: 0, borders: !!gaugeShowBorders,
+                colorBorderOuter: 'transparent', colorBorderOuterEnd: 'transparent',
+                colorBorderMiddle: 'transparent', colorBorderMiddleEnd: 'transparent',
+                colorBorderInner: 'transparent', colorBorderInnerEnd: 'transparent',
+                needleType: gaugeNeedleType, needleWidth: 3,
+                needleShadow: false,
                 colorNeedle: color, colorNeedleEnd: color,
-                animationDuration: gaugeAnimMs
+                colorNeedleCircleOuter: plateHi, colorNeedleCircleOuterEnd: plateHi,
+                colorNeedleCircleInner: plate, colorNeedleCircleInnerEnd: plate,
+                valueBox: true, colorValueText: fg,
+                colorValueBoxBackground: plateHi,
+                colorValueBoxRect: 'transparent', colorValueBoxRectEnd: 'transparent',
+                colorValueBoxShadow: 'transparent',
+                fontNumbersSize: 18, fontUnitsSize: 22, fontTitleSize: 22, fontValueSize: 30,
+                animationRule: 'bounce', animationDuration: gaugeAnimMs
             }).draw();
             widgetObj.update = (val) => { widgetObj.gauge.value = val; };
             widgetObj.clear = () => { widgetObj.gauge.value = min; };

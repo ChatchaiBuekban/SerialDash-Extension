@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.0.2] — 2026-04-29
+
+### Changed
+- **Radial Gauge** restyled to match the dashboard's material/dark theme — plate, ticks, numbers, title, units, and value box now read from VS Code theme variables instead of a hard-coded white plate. Borders flattened, needle hub theme-colored, animation set to `bounce`.
+- **Radial Gauge tick labels** rounded to 1 decimal with trailing zeros trimmed (e.g. `0`, `1.5`, `2.3`) to keep the dial readable when min/max have many decimals.
+
 ### Added
 - **In-dashboard connection controls** — port + baud selectors and a Connect/Disconnect button live in the header. Command palette no longer prompts for them.
 - **Refresh ports** button to re-scan available serial devices.

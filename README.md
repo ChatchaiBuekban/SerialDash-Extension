@@ -311,4 +311,4 @@ Created and maintained by ❤️ **Chatchai Buekban**  — [@ChatchaiBuekban](ht
 
 ## License
 
-MIT
+Released under the [MIT License](LICENSE) — © 2026 Chatchai Buekban.

@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.0.3] — 2026-05-06
+
+### Changed
+- Refreshed icon assets and corrected the dashboard subtitle.
+- Updated publisher information and added repository metadata in `package.json`.
+
+### Added
+- MIT `LICENSE` file with a link from the README.
+
 ## [0.0.2] — 2026-04-29
 
 ### Changed

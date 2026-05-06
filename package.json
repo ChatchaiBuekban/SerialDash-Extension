@@ -2,7 +2,7 @@
   "name": "serialdash-extension",
   "displayName": "Serial Dash",
   "description": "Real-time Serial Dashboard with Line and Gauge charts and more.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "chatchaibuekban",
   "engines": {
     "vscode": "^1.75.0"
